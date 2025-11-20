@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import AIChat from './components/AIChat';
 import Navbar from './components/Navbar';
 import SmoothScroll from './components/SmoothScroll';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (

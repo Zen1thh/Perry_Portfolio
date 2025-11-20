@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useMotionTemplate, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionTemplate, useInView, useSpring } from 'framer-motion';
 import gsap from 'gsap';
 
 const projects = [
@@ -132,8 +132,14 @@ const ProjectTitle: React.FC<{ title: string }> = ({ title }) => {
     target: ref,
     offset: ["start 90%", "center 50%"] 
   });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   
-  const percentage = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const percentage = useTransform(smoothProgress, [0, 1], [0, 100]);
   // Using semi-transparent white for the 'unrevealed' part to make it subtle but visible against black bg
   const gradient = useMotionTemplate`linear-gradient(90deg, #ffffff ${percentage}%, rgba(255,255,255,0.15) ${percentage}%)`;
 

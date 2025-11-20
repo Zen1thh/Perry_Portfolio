@@ -12,7 +12,7 @@ import CustomCursor from './components/CustomCursor';
 function App() {
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-white selection:text-black font-inter">
-      
+      <CustomCursor />
       <SmoothScroll>
         <Navbar />
         <main>

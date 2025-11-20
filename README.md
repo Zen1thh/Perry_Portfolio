@@ -3,9 +3,9 @@
   <img width="1200" height="475" alt="Portfolio Banner" src="./public/web-portfolio.png" />
 </a>
 
-# Nexus Portfolio
+# Perry Portfolio
 
-### A Modern, Interactive Developer Portfolio
+### A Minimalist, Interactive Developer Portfolio.
 
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)

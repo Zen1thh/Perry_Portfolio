@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from 'react';
+import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
 interface SmoothScrollProps {

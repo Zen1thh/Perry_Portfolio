@@ -13,9 +13,12 @@ const ParticleBackground: React.FC = () => {
     let width = window.innerWidth;
     let height = window.innerHeight;
 
+    // Detect mobile
+    const isMobile = width < 768;
+
     // Configuration
-    const particleCount = 70;
-    const connectionDistance = 180; // Increased distance for more connections
+    const particleCount = isMobile ? 30 : 70; // Reduced count for mobile
+    const connectionDistance = isMobile ? 100 : 180; // Reduced distance for mobile
     const mouseDistance = 250;
 
     canvas.width = width;

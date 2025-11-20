@@ -6,6 +6,18 @@ interface SmoothScrollProps {
 }
 
 const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
+  // 0. Detect Mobile/Tablet
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024 || 'ontouchstart' in window);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // 1. Setup scroll physics
   // We intercept the native scroll position
   const { scrollY } = useScroll();
@@ -30,6 +42,8 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
   const [contentHeight, setContentHeight] = useState(0);
 
   useLayoutEffect(() => {
+    if (isMobile) return; // Skip measurement on mobile
+
     const handleResize = () => {
       if (contentRef.current) {
         setContentHeight(contentRef.current.scrollHeight);
@@ -51,7 +65,11 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
       resizeObserver.disconnect();
       window.removeEventListener('resize', handleResize);
     };
-  }, [children]);
+  }, [children, isMobile]);
+
+  if (isMobile) {
+    return <>{children}</>;
+  }
 
   return (
     <>

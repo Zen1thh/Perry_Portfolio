@@ -329,7 +329,7 @@ const About: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="text-gray-400 text-lg leading-relaxed"
               >
-                I am Perry Gabriel O. Uy, a proactive IT specialist pursuing a degree in Mobile and Internet Technology at National University Fairview. My passion lies in bridging the gap between innovative ideas and functional reality, transforming complex requirements into seamless digital experiences.
+                I am Perry Gabriel Uy, a proactive IT student pursuing a degree in Mobile and Internet Technology at National University Fairview. My passion lies in bridging the gap between innovative ideas and functional reality, transforming complex requirements into seamless digital experiences.
                 <br /><br />
                 Specializing in full-stack development, Cloud Infrastructure, and IoT, I deliver secure, high-performance solutions with precision and professional integrity. My disciplined approach transforms complex challenges into reliable, scalable systems. Ensuring tangible value and trust in every project.
               </motion.p>
